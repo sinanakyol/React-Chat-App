@@ -3,10 +3,7 @@ import { createContext, useContext, useState } from "react";
 const ChatContext = createContext();
 
 export const ChatProvider = ({ children }) => {
-  const [messages, setMessages] = useState([
-    { message: "selam" },
-    { message: "naber" },
-  ]);
+  const [messages, setMessages] = useState([]);
 
   const values = {
     messages,
@@ -16,4 +13,5 @@ export const ChatProvider = ({ children }) => {
   return <ChatContext.Provider value={values}>{children}</ChatContext.Provider>;
 };
 
+// Hook oluşturduk.
 export const useChat = () => useContext(ChatContext);
